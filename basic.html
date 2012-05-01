@@ -8,6 +8,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
     <head>
 
+        <meta name="color:Background" content="#fffe"/>
+        <meta name="color:Text" content="#222"/>
+        <meta name="color:Links" content="#1D97FF"/>
+
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
         <title>{Title}{block:PostSummary} | {PostSummary}{/block:PostSummary}{block:SearchPage} | {lang:Search results for SearchQuery}{/block:SearchPage}</title> 
@@ -34,9 +38,9 @@
             }
 
             html {
-                color: #222;
+                color: {color:Text};
                 font-size: 62.5%;
-                background: white;
+                background: {color:Background};
                 -webkit-font-smoothing: antialiased;
             }
 
@@ -48,6 +52,44 @@
                 letter-spacing: -0.125em;
             }
 
+            #wrapper {
+                position: relative;
+                overflow: hidden;
+                padding: 24px;
+                padding: 2.4rem;
+                max-width: 500px;
+                max-width: 50rem;
+            }
+
+            .inner {
+                position: relative;
+                overflow: hidden;
+                padding: 24px 0;
+                padding: 2.4rem 0;
+            }
+
+            a {
+                text-decoration: none;
+                color: {color:Links};
+            }
+
+            a:hover,
+            a:strong {
+                text-decoration: underline;
+            }
+
+            h1 a,
+            h2 a strong {
+                color: inherit;
+            }
+
+            h1 a:hover,
+            h2 a:hover strong,
+            h1 a:focus,
+            h2 a:focus strong {
+                color: {color:Links};
+            }
+
         </style>
 
     </head>
@@ -57,7 +99,7 @@
         <header id="masthead">
             <div class="inner">
 
-                <h1>{Title}</h1>
+                <h1><a href="/">{Title}</a></h1>
                 {block:Description}<p id="description">{Description}</p>{/block:Description}
 
                 <nav>        

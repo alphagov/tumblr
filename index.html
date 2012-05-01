@@ -90,6 +90,24 @@
                 color: {color:Links};
             }
 
+            #masthead ul {
+                list-style: none;
+            }
+
+            #masthead li {
+                float: left;
+                padding-right: 12px;
+                padding-right: 1.2rem;
+            }
+
+            h1, h2 strong {
+                font-family: "Gill Sans W01 Medium", "Gill Sans MT Pro", "Gill Sans", GillSans, sans-serif;
+                font-size: 45px;
+                font-size: 4.5rem;
+                line-height: 1.1555555556;
+                font-weight: 500;
+            }
+
         </style>
 
     </head>
@@ -154,7 +172,7 @@
                                 {block:PermalinkPage}<a href="{Permalink}">{/block:PermalinkPage}
                                     <strong>{block:Title}{Title}{/block:Title}</strong>
                                     <span class="article-date">
-                                        {block:Date}<abbr>{DayOfMOnth}{DayOfMonthSuffix}{ShortMonth}{Year}</abbr>{/block:Date}
+                                        {block:Date}<abbr>{DayOfMOnth}&nbsp;{ShortMonth}&nbsp;{Year}</abbr>{/block:Date}
                                     </span>
                                 {block:PermalinkPage}</a>{/block:PermalinkPage}
                             </h2>
@@ -164,9 +182,11 @@
                                 <a href="{Permalink}#notes">{NoteCountWithLabel}</a>
                                 {/block:NoteCount}
                             </p>
+                            {block:GroupMembers}
                             <p class="article-author">
                                 Posted by <a href="{PostAuthorURL}">{PostAuthorName}</a>
                             </p>
+                            {/block:GroupMembers}
                             {block:PermalinkPage}
                                 {block:HasTags}
                                 <ul class="article-tags">
@@ -200,7 +220,7 @@
                             <h2>
                                 {block:PermalinkPage}<a href="{Permalink}">{/block:PermalinkPage}
                                     <span class="article-date">
-                                        {block:Date}<abbr>{DayOfMOnth}{DayOfMonthSuffix}{ShortMonth}{Year}</abbr>{/block:Date}
+                                        {block:Date}<abbr>{DayOfMOnth}&nbsp;{ShortMonth}&nbsp;{Year}</abbr>{/block:Date}
                                     </span>
                                 {block:PermalinkPage}</a>{/block:PermalinkPage}
                             </h2>
@@ -210,9 +230,11 @@
                                 <a href="{Permalink}#notes">{NoteCountWithLabel}</a>
                                 {/block:NoteCount}
                             </p>
+                            {block:GroupMembers}
                             <p class="article-author">
                                 Posted by <a href="{PostAuthorURL}">{PostAuthorName}</a>
                             </p>
+                            {/block:GroupMembers}
                             {block:PermalinkPage}
                                 {block:HasTags}
                                 <ul class="article-tags">
@@ -256,7 +278,7 @@
                             <h2>
                                 {block:PermalinkPage}<a href="{Permalink}">{/block:PermalinkPage}
                                     <span class="article-date">
-                                        {block:Date}<abbr>{DayOfMOnth}{DayOfMonthSuffix}{ShortMonth}{Year}</abbr>{/block:Date}
+                                        {block:Date}<abbr>{DayOfMOnth}&nbsp;{ShortMonth}&nbsp;{Year}</abbr>{/block:Date}
                                     </span>
                                 {block:PermalinkPage}</a>{/block:PermalinkPage}
                             </h2>
@@ -266,9 +288,11 @@
                                 <a href="{Permalink}#notes">{NoteCountWithLabel}</a>
                                 {/block:NoteCount}
                             </p>
+                            {block:GroupMembers}
                             <p class="article-author">
                                 Posted by <a href="{PostAuthorURL}">{PostAuthorName}</a>
                             </p>
+                            {/block:GroupMembers}
                             {block:PermalinkPage}
                                 {block:HasTags}
                                 <ul class="article-tags">
@@ -310,7 +334,7 @@
                             <h2>
                                 {block:PermalinkPage}<a href="{Permalink}">{/block:PermalinkPage}
                                     <span class="article-date">
-                                        {block:Date}<abbr>{DayOfMOnth}{DayOfMonthSuffix}{ShortMonth}{Year}</abbr>{/block:Date}
+                                        {block:Date}<abbr>{DayOfMOnth}&nbsp;{ShortMonth}&nbsp;{Year}</abbr>{/block:Date}
                                     </span>
                                 {block:PermalinkPage}</a>{/block:PermalinkPage}
                             </h2>
@@ -320,9 +344,11 @@
                                 <a href="{Permalink}#notes">{NoteCountWithLabel}</a>
                                 {/block:NoteCount}
                             </p>
+                            {block:GroupMembers}
                             <p class="article-author">
                                 Posted by <a href="{PostAuthorURL}">{PostAuthorName}</a>
                             </p>
+                            {/block:GroupMembers}
                             {block:PermalinkPage}
                                 {block:HasTags}
                                 <ul class="article-tags">
@@ -365,7 +391,7 @@
                             <h2>
                                 {block:PermalinkPage}<a href="{Permalink}">{/block:PermalinkPage}
                                     <span class="article-date">
-                                        {block:Date}<abbr>{DayOfMOnth}{DayOfMonthSuffix}{ShortMonth}{Year}</abbr>{/block:Date}
+                                        {block:Date}<abbr>{DayOfMOnth}&nbsp;{ShortMonth}&nbsp;{Year}</abbr>{/block:Date}
                                     </span>
                                 {block:PermalinkPage}</a>{/block:PermalinkPage}
                             </h2>
@@ -375,9 +401,11 @@
                                 <a href="{Permalink}#notes">{NoteCountWithLabel}</a>
                                 {/block:NoteCount}
                             </p>
+                            {block:GroupMembers}
                             <p class="article-author">
                                 Posted by <a href="{PostAuthorURL}">{PostAuthorName}</a>
                             </p>
+                            {/block:GroupMembers}
                             {block:PermalinkPage}
                                 {block:HasTags}
                                 <ul class="article-tags">
@@ -421,7 +449,7 @@
                                 {block:PermalinkPage}<a href="{Permalink}">{/block:PermalinkPage}
                                     <strong>{block:Title}{Title}{/block:Title}</strong>
                                     <span class="article-date">
-                                        {block:Date}<abbr>{DayOfMOnth}{DayOfMonthSuffix}{ShortMonth}{Year}</abbr>{/block:Date}
+                                        {block:Date}<abbr>{DayOfMOnth}&nbsp;{ShortMonth}&nbsp;{Year}</abbr>{/block:Date}
                                     </span>
                                 {block:PermalinkPage}</a>{/block:PermalinkPage}
                             </h2>
@@ -431,9 +459,11 @@
                                 <a href="{Permalink}#notes">{NoteCountWithLabel}</a>
                                 {/block:NoteCount}
                             </p>
+                            {block:GroupMembers}
                             <p class="article-author">
                                 Posted by <a href="{PostAuthorURL}">{PostAuthorName}</a>
                             </p>
+                            {/block:GroupMembers}
                             {block:PermalinkPage}
                                 {block:HasTags}
                                 <ul class="article-tags">
@@ -472,7 +502,7 @@
                             <h2>
                                 {block:PermalinkPage}<a href="{Permalink}">{/block:PermalinkPage}
                                     <span class="article-date">
-                                        {block:Date}<abbr>{DayOfMOnth}{DayOfMonthSuffix}{ShortMonth}{Year}</abbr>{/block:Date}
+                                        {block:Date}<abbr>{DayOfMOnth}&nbsp;{ShortMonth}&nbsp;{Year}</abbr>{/block:Date}
                                     </span>
                                 {block:PermalinkPage}</a>{/block:PermalinkPage}
                             </h2>
@@ -482,9 +512,11 @@
                                 <a href="{Permalink}#notes">{NoteCountWithLabel}</a>
                                 {/block:NoteCount}
                             </p>
+                            {block:GroupMembers}
                             <p class="article-author">
                                 Posted by <a href="{PostAuthorURL}">{PostAuthorName}</a>
                             </p>
+                            {/block:GroupMembers}
                             {block:PermalinkPage}
                                 {block:HasTags}
                                 <ul class="article-tags">
@@ -526,7 +558,7 @@
                             <h2>
                                 {block:PermalinkPage}<a href="{Permalink}">{/block:PermalinkPage}
                                     <span class="article-date">
-                                        {block:Date}<abbr>{DayOfMOnth}{DayOfMonthSuffix}{ShortMonth}{Year}</abbr>{/block:Date}
+                                        {block:Date}<abbr>{DayOfMOnth}&nbsp;{ShortMonth}&nbsp;{Year}</abbr>{/block:Date}
                                     </span>
                                 {block:PermalinkPage}</a>{/block:PermalinkPage}
                             </h2>
@@ -536,9 +568,11 @@
                                 <a href="{Permalink}#notes">{NoteCountWithLabel}</a>
                                 {/block:NoteCount}
                             </p>
+                            {block:GroupMembers}
                             <p class="article-author">
                                 Posted by <a href="{PostAuthorURL}">{PostAuthorName}</a>
                             </p>
+                            {/block:GroupMembers}
                             {block:PermalinkPage}
                                 {block:HasTags}
                                 <ul class="article-tags">
@@ -580,7 +614,7 @@
                             <h2>
                                 {block:PermalinkPage}<a href="{Permalink}">{/block:PermalinkPage}
                                     <span class="article-date">
-                                        {block:Date}<abbr>{DayOfMOnth}{DayOfMonthSuffix}{ShortMonth}{Year}</abbr>{/block:Date}
+                                        {block:Date}<abbr>{DayOfMOnth}{DayOfMonthSuffix}&nbsp;{ShortMonth}&nbsp;{Year}</abbr>{/block:Date}
                                     </span>
                                 {block:PermalinkPage}</a>{/block:PermalinkPage}
                             </h2>
@@ -590,9 +624,11 @@
                                 <a href="{Permalink}#notes">{NoteCountWithLabel}</a>
                                 {/block:NoteCount}
                             </p>
+                            {block:GroupMembers}
                             <p class="article-author">
                                 Posted by <a href="{PostAuthorURL}">{PostAuthorName}</a>
                             </p>
+                            {/block:GroupMembers}
                             {block:PermalinkPage}
                                 {block:HasTags}
                                 <ul class="article-tags">

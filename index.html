@@ -8,9 +8,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
     <head>
 
+        <meta name="viewport" content="width=device-width; initial-scale=1.0">
+
+
+
         <meta name="color:Background" content="#fffe"/>
         <meta name="color:Text" content="#222"/>
         <meta name="color:Links" content="#1D97FF"/>
+
+
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
@@ -95,9 +101,15 @@
             }
 
             #masthead li {
+                list-style: none;
                 float: left;
                 padding-right: 12px;
                 padding-right: 1.2rem;
+            }
+
+            .article-date {
+                display: block;
+                padding: 6px 0;
             }
 
             h1, h2 strong {
@@ -106,6 +118,22 @@
                 font-size: 4.5rem;
                 line-height: 1.1555555556;
                 font-weight: 500;
+            }
+
+            .chat h3 {
+                float: left;
+            }
+
+            .link figure a,
+            footer p {
+                font-size: 72px;
+                font-size: 7.2rem;
+                line-height: 1;
+                font-weight: bold;
+            }
+
+            p {
+                padding: 6px 0;
             }
 
         </style>
@@ -169,12 +197,12 @@
                     <div class="inner">
                         <header>                                    
                             <h2>
-                                {block:PermalinkPage}<a href="{Permalink}">{/block:PermalinkPage}
+                                {block:IndexPage}<a href="{Permalink}">{/block:IndexPage}
                                     <strong>{block:Title}{Title}{/block:Title}</strong>
                                     <span class="article-date">
                                         {block:Date}<abbr>{DayOfMOnth}&nbsp;{ShortMonth}&nbsp;{Year}</abbr>{/block:Date}
                                     </span>
-                                {block:PermalinkPage}</a>{/block:PermalinkPage}
+                                {block:IndexPage}</a>{/block:IndexPage}
                             </h2>
                             
                             <p class="article-notes">
@@ -218,11 +246,11 @@
                     <div class="inner">
                         <header>                                    
                             <h2>
-                                {block:PermalinkPage}<a href="{Permalink}">{/block:PermalinkPage}
+                                {block:IndexPage}<a href="{Permalink}">{/block:IndexPage}
                                     <span class="article-date">
                                         {block:Date}<abbr>{DayOfMOnth}&nbsp;{ShortMonth}&nbsp;{Year}</abbr>{/block:Date}
                                     </span>
-                                {block:PermalinkPage}</a>{/block:PermalinkPage}
+                                {block:IndexPage}</a>{/block:IndexPage}
                             </h2>
                             
                             <p class="article-notes">
@@ -247,9 +275,9 @@
                         </header>
                         <div class="article-content">
                             <figure>
-                                {block:PermalinkPage}<a href="{Permalink}">{/block:PermalinkPage}
+                                {block:IndexPage}<a href="{Permalink}">{/block:IndexPage}
                                 <img src="{PhotoURL-500}" alt="{PhotoAlt}" />
-                                {block:PermalinkPage}</a>{/block:PermalinkPage}
+                                {block:IndexPage}</a>{/block:IndexPage}
                                 {block:Caption}
                                 <figcaption>
                                     {Caption}
@@ -276,11 +304,11 @@
                     <div class="inner">
                         <header>                                    
                             <h2>
-                                {block:PermalinkPage}<a href="{Permalink}">{/block:PermalinkPage}
+                                {block:IndexPage}<a href="{Permalink}">{/block:IndexPage}
                                     <span class="article-date">
                                         {block:Date}<abbr>{DayOfMOnth}&nbsp;{ShortMonth}&nbsp;{Year}</abbr>{/block:Date}
                                     </span>
-                                {block:PermalinkPage}</a>{/block:PermalinkPage}
+                                {block:IndexPage}</a>{/block:IndexPage}
                             </h2>
                             
                             <p class="article-notes">
@@ -332,11 +360,11 @@
                     <div class="inner">
                         <header>                                    
                             <h2>
-                                {block:PermalinkPage}<a href="{Permalink}">{/block:PermalinkPage}
+                                {block:IndexPage}<a href="{Permalink}">{/block:IndexPage}
                                     <span class="article-date">
                                         {block:Date}<abbr>{DayOfMOnth}&nbsp;{ShortMonth}&nbsp;{Year}</abbr>{/block:Date}
                                     </span>
-                                {block:PermalinkPage}</a>{/block:PermalinkPage}
+                                {block:IndexPage}</a>{/block:IndexPage}
                             </h2>
                             
                             <p class="article-notes">
@@ -389,11 +417,11 @@
                     <div class="inner">
                         <header>                                    
                             <h2>
-                                {block:PermalinkPage}<a href="{Permalink}">{/block:PermalinkPage}
+                                {block:IndexPage}<a href="{Permalink}">{/block:IndexPage}
                                     <span class="article-date">
                                         {block:Date}<abbr>{DayOfMOnth}&nbsp;{ShortMonth}&nbsp;{Year}</abbr>{/block:Date}
                                     </span>
-                                {block:PermalinkPage}</a>{/block:PermalinkPage}
+                                {block:IndexPage}</a>{/block:IndexPage}
                             </h2>
                             
                             <p class="article-notes">
@@ -442,16 +470,16 @@
 
            
                 {block:Chat}
-                <article class="link">
+                <article class="chat">
                     <div class="inner">
                         <header>                                    
                             <h2>
-                                {block:PermalinkPage}<a href="{Permalink}">{/block:PermalinkPage}
+                                {block:IndexPage}<a href="{Permalink}">{/block:IndexPage}
                                     <strong>{block:Title}{Title}{/block:Title}</strong>
                                     <span class="article-date">
                                         {block:Date}<abbr>{DayOfMOnth}&nbsp;{ShortMonth}&nbsp;{Year}</abbr>{/block:Date}
                                     </span>
-                                {block:PermalinkPage}</a>{/block:PermalinkPage}
+                                {block:IndexPage}</a>{/block:IndexPage}
                             </h2>
                             
                             <p class="article-notes">
@@ -500,11 +528,11 @@
                     <div class="inner">
                         <header>                                    
                             <h2>
-                                {block:PermalinkPage}<a href="{Permalink}">{/block:PermalinkPage}
+                                {block:IndexPage}<a href="{Permalink}">{/block:IndexPage}
                                     <span class="article-date">
                                         {block:Date}<abbr>{DayOfMOnth}&nbsp;{ShortMonth}&nbsp;{Year}</abbr>{/block:Date}
                                     </span>
-                                {block:PermalinkPage}</a>{/block:PermalinkPage}
+                                {block:IndexPage}</a>{/block:IndexPage}
                             </h2>
                             
                             <p class="article-notes">
@@ -556,11 +584,11 @@
                     <div class="inner">
                         <header>                                    
                             <h2>
-                                {block:PermalinkPage}<a href="{Permalink}">{/block:PermalinkPage}
+                                {block:IndexPage}<a href="{Permalink}">{/block:IndexPage}
                                     <span class="article-date">
                                         {block:Date}<abbr>{DayOfMOnth}&nbsp;{ShortMonth}&nbsp;{Year}</abbr>{/block:Date}
                                     </span>
-                                {block:PermalinkPage}</a>{/block:PermalinkPage}
+                                {block:IndexPage}</a>{/block:IndexPage}
                             </h2>
                             
                             <p class="article-notes">
@@ -612,7 +640,7 @@
                     <div class="inner">
                         <header>                                    
                             <h2>
-                                {block:PermalinkPage}<a href="{Permalink}">{/block:PermalinkPage}
+                                {block:IndexPage}<a href="{Permalink}">{/block:IndexPage}
                                     <span class="article-date">
                                         {block:Date}<abbr>{DayOfMOnth}{DayOfMonthSuffix}&nbsp;{ShortMonth}&nbsp;{Year}</abbr>{/block:Date}
                                     </span>
@@ -697,7 +725,7 @@
 
         <footer id="sitemeta">
             <div class="inner">
-                <p>©♔</p>
+                <p>©&nbsp;♔</p>
             </div>
         </footer>
 

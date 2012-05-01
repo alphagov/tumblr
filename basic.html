@@ -96,15 +96,32 @@
                 color: {color:Links};
             }
 
-            #masthead ul {
+            #masthead ul,
+            .article-tags ul {
                 list-style: none;
             }
 
-            #masthead li {
+            #masthead li,
+            .article-tags li {
                 list-style: none;
                 float: left;
                 padding-right: 12px;
                 padding-right: 1.2rem;
+            }
+
+            #pageNav ul {
+                display: table;
+            }
+
+            #pageNav li {
+                display: inline;
+                display: table-cell;
+            }
+
+            #pageNav a {
+                display: table-cell;
+                padding: 24px;
+                background: rgba(0,0,0,0.1);
             }
 
             .article-date {
@@ -124,12 +141,13 @@
                 float: left;
             }
 
-            .link figure a,
+            .link figure > a,
             footer p {
                 font-size: 72px;
                 font-size: 7.2rem;
                 line-height: 1;
                 font-weight: bold;
+                white-space: nowrap;
             }
 
             p {

@@ -12,9 +12,10 @@
 
 
 
-        <meta name="color:Background" content="#fffe"/>
-        <meta name="color:Text" content="#222"/>
+        <meta name="color:Background" content="#ffffff"/>
+        <meta name="color:Text" content="#222222"/>
         <meta name="color:Links" content="#1D97FF"/>
+        <meta name="color:Links-Active" content="#990000"/>
 
 
 
@@ -45,16 +46,42 @@
 
             html {
                 color: {color:Text};
-                font-size: 62.5%;
-                background: {color:Background};
                 -webkit-font-smoothing: antialiased;
+                font-size: 62.5%;
+                background-color: white;
+                /*background-image: -webkit-linear-gradient(#fafafa 24px, transparent 50%);*/
+                /*background-size: 100% 48px;*/
+            }
+
+            @media (max-width: 540px) {
+                html {
+                    font-size: 9px;
+                }
+            }
+
+            @media (min-width: 660px) {
+                html {
+                    font-size: 11px;
+                }
+            }
+
+            @media (min-width: 720px) {
+                html {
+                    font-size: 12px;
+                }
+            }
+
+            @media (min-height: 900px) {
+                html {
+                    font-size: 13px;
+                }
             }
 
             body {
                 font-family: sans-serif;
-                font-size: 15px;
-                font-size: 1.5rem;
-                line-height: 1.6;
+                font-size: 16px;
+                font-size: 1.6rem;
+                line-height: 1.5;
             }
 
             #wrapper {
@@ -68,25 +95,36 @@
             }
 
             .inner {
+                clear: both;
                 position: relative;
-                overflow: hidden;
-                padding: 24px 0;
-                padding: 2.4rem 0;
+                overflow: visible;
+                padding: 12px 0 72px;
+                padding: 1.2rem 0 7.2rem;
             }
 
             a {
                 text-decoration: none;
                 color: {color:Links};
+                display: inline-block;
+            }
+
+            a, a * {
+                cursor: pointer;
+                    -ms-transition: 0.3s color ease;
+                   -moz-transition: 0.3s color ease;
+                     -o-transition: 0.3s color ease;
+                -webkit-transition: 0.3s color ease;
+                        transition: 0.3s color ease;
             }
 
             a:hover,
-            a:strong {
-                text-decoration: underline;
+            a:focus {
             }
 
             h1 a,
             h2 a strong {
-                color: inherit;
+                display: block;
+                color: {color:Text};
             }
 
             h1 a:hover,
@@ -96,62 +134,133 @@
                 color: {color:Links};
             }
 
-            #masthead ul,
-            .article-tags ul {
+            a:active,
+            h1 a:active,
+            h2 a:active strong {
+                text-decoration: underline;
+            }
+
+            #masthead ul {
+                overflow: hidden;
                 list-style: none;
+                padding: 18px 0 6px;
+                padding: 1.8rem 0 0.6rem;
+            }
+
+
+            ul.article-tags {
+                overflow: hidden;
+                list-style: none;
+                padding: 6px 0;
+                padding: 0.6rem 0;
             }
 
             #masthead li,
             .article-tags li {
                 list-style: none;
                 float: left;
-                padding-right: 12px;
-                padding-right: 1.2rem;
+                padding-right: 18px;
+                padding-right: 1.8rem;
+                font-size: 13px;
+                font-size: 1.3rem;
+                line-height: 1.8461538462;
+            }
+
+            #pagenav {
+                margin-top: 48px;
+                margin-top: 4.8rem;
             }
 
             #pageNav ul {
-                display: table;
+                width: 100%;
+                text-align: center;
+                border: 1px solid #ccc;
+                border-width: 1px 0;
             }
 
             #pageNav li {
                 display: inline;
-                display: table-cell;
             }
 
             #pageNav a {
-                display: table-cell;
-                padding: 24px;
-                background: rgba(0,0,0,0.1);
+                font-weight: bold;
+                padding: 0 24px;
+                padding: 0 2.4rem;
+                line-height: 48px;
+                line-height: 4.8rem;
             }
 
             .article-date {
                 display: block;
                 padding: 6px 0;
+                padding: 0.6rem 0;
+            }
+
+            .article-author,
+            .article-tags {
+                position: relative;
+                top: -12px;
+                top: -1.2rem;
             }
 
             h1, h2 strong {
+                padding: 4px 0 8px;
+                padding: 0.4rem 0 0.8rem;
+                text-transform: uppercase;
                 font-family: "Gill Sans W01 Medium", "Gill Sans MT Pro", "Gill Sans", GillSans, sans-serif;
                 font-size: 45px;
                 font-size: 4.5rem;
-                line-height: 1.1555555556;
+                line-height: 1.0666666667;
                 font-weight: 500;
             }
 
             .chat h3 {
                 float: left;
+                padding: 6px 6px 6px 0;
+                padding: 0.6rem 0.6rem 0.6rem 0;
             }
 
-            .link figure > a,
-            footer p {
-                font-size: 72px;
-                font-size: 7.2rem;
-                line-height: 1;
-                font-weight: bold;
+            .link figure > a {
+                display: inline-block;
+                color: white;
+                background: {color:Links};
+                padding: 6px;
+                padding: 0.6rem;
+                font-size: 40px;
+                font-size: 4rem;
+                line-height: 1.2;
                 white-space: nowrap;
             }
 
-            p {
+            p, figure {
                 padding: 6px 0;
+                padding: 0.6rem 0.6rem 0.6rem 0;
+            }
+
+            .text blockquote {
+                position: relative;
+                border-left: 1px solid #ccc;
+                padding-left: 23px;
+            }
+
+            #main img {
+                max-width: 100%;
+                height: auto;
+            }
+
+            .quote blockquote {
+                font-size: 40px;
+                font-size: 4rem;
+                line-height: 1.2;
+                text-indent: -0.35em;
+            }
+
+            #description {
+                font-family: 'Andale Mono', 'Courier', 'Courier New';
+            }
+
+            footer p{
+                text-align: center;
             }
 
         </style>
@@ -166,11 +275,13 @@
                 <h1><a href="/">{Title}</a></h1>
                 {block:Description}<p id="description">{Description}</p>{/block:Description}
 
-                <nav>        
-                    <li><a href="/tagged/weeknotes">Week Notes</a></li>
-                    <li><a href="/archive">Archive</a></li>
-                    <li><a href="/random">Random</a></li>
-                    <li><a href="{RSS}">RSS</a></li>
+                <nav>
+                    <ul>    
+                        <li><a href="/tagged/weeknotes">Week Notes</a></li>
+                        <li><a href="/archive">Archive</a></li>
+                        <li><a href="/random">Random</a></li>
+                        <li><a href="{RSS}">RSS</a></li>
+                    </ul>
                 </nav>
 
             </div>
@@ -222,17 +333,16 @@
                                     </span>
                                 {block:IndexPage}</a>{/block:IndexPage}
                             </h2>
-                            
+                            {block:PostNotes}
                             <p class="article-notes">
                                 {block:NoteCount}
                                 <a href="{Permalink}#notes">{NoteCountWithLabel}</a>
                                 {/block:NoteCount}
                             </p>
-                            {block:GroupMembers}
+                            {/block:PostNotes}
                             <p class="article-author">
                                 Posted by <a href="{PostAuthorURL}">{PostAuthorName}</a>
                             </p>
-                            {/block:GroupMembers}
                             {block:PermalinkPage}
                                 {block:HasTags}
                                 <ul class="article-tags">
@@ -270,17 +380,16 @@
                                     </span>
                                 {block:IndexPage}</a>{/block:IndexPage}
                             </h2>
-                            
+                            {block:PostNotes}
                             <p class="article-notes">
                                 {block:NoteCount}
                                 <a href="{Permalink}#notes">{NoteCountWithLabel}</a>
                                 {/block:NoteCount}
                             </p>
-                            {block:GroupMembers}
+                            {/block:PostNotes}
                             <p class="article-author">
                                 Posted by <a href="{PostAuthorURL}">{PostAuthorName}</a>
                             </p>
-                            {/block:GroupMembers}
                             {block:PermalinkPage}
                                 {block:HasTags}
                                 <ul class="article-tags">
@@ -329,16 +438,16 @@
                                 {block:IndexPage}</a>{/block:IndexPage}
                             </h2>
                             
+                            {block:PostNotes}
                             <p class="article-notes">
                                 {block:NoteCount}
                                 <a href="{Permalink}#notes">{NoteCountWithLabel}</a>
                                 {/block:NoteCount}
                             </p>
-                            {block:GroupMembers}
+                            {/block:PostNotes}
                             <p class="article-author">
                                 Posted by <a href="{PostAuthorURL}">{PostAuthorName}</a>
                             </p>
-                            {/block:GroupMembers}
                             {block:PermalinkPage}
                                 {block:HasTags}
                                 <ul class="article-tags">
@@ -385,16 +494,16 @@
                                 {block:IndexPage}</a>{/block:IndexPage}
                             </h2>
                             
+                            {block:PostNotes}
                             <p class="article-notes">
                                 {block:NoteCount}
                                 <a href="{Permalink}#notes">{NoteCountWithLabel}</a>
                                 {/block:NoteCount}
                             </p>
-                            {block:GroupMembers}
+                            {/block:PostNotes}
                             <p class="article-author">
                                 Posted by <a href="{PostAuthorURL}">{PostAuthorName}</a>
                             </p>
-                            {/block:GroupMembers}
                             {block:PermalinkPage}
                                 {block:HasTags}
                                 <ul class="article-tags">
@@ -407,10 +516,10 @@
                         </header>
                         <div class="article-content">
                             <figure>
-                                <blockquote>{Quote}</blockquote>
+                                <blockquote>&ldquo;{Quote}&rdquo;</blockquote>
                                 {block:Caption}
                                 <figcaption>
-                                    {Caption}
+                                    &mdash;{Caption}
                                 </figcaption>
                                 {/block:Caption}
                             </figure>
@@ -441,17 +550,16 @@
                                     </span>
                                 {block:IndexPage}</a>{/block:IndexPage}
                             </h2>
-                            
+                            {block:PostNotes}
                             <p class="article-notes">
                                 {block:NoteCount}
                                 <a href="{Permalink}#notes">{NoteCountWithLabel}</a>
                                 {/block:NoteCount}
                             </p>
-                            {block:GroupMembers}
+                            {/block:PostNotes}
                             <p class="article-author">
                                 Posted by <a href="{PostAuthorURL}">{PostAuthorName}</a>
                             </p>
-                            {/block:GroupMembers}
                             {block:PermalinkPage}
                                 {block:HasTags}
                                 <ul class="article-tags">
@@ -500,16 +608,16 @@
                                 {block:IndexPage}</a>{/block:IndexPage}
                             </h2>
                             
+                            {block:PostNotes}
                             <p class="article-notes">
                                 {block:NoteCount}
                                 <a href="{Permalink}#notes">{NoteCountWithLabel}</a>
                                 {/block:NoteCount}
                             </p>
-                            {block:GroupMembers}
+                            {/block:PostNotes}
                             <p class="article-author">
                                 Posted by <a href="{PostAuthorURL}">{PostAuthorName}</a>
                             </p>
-                            {/block:GroupMembers}
                             {block:PermalinkPage}
                                 {block:HasTags}
                                 <ul class="article-tags">
@@ -553,16 +661,16 @@
                                 {block:IndexPage}</a>{/block:IndexPage}
                             </h2>
                             
+                            {block:PostNotes}
                             <p class="article-notes">
                                 {block:NoteCount}
                                 <a href="{Permalink}#notes">{NoteCountWithLabel}</a>
                                 {/block:NoteCount}
                             </p>
-                            {block:GroupMembers}
+                            {/block:PostNotes}
                             <p class="article-author">
                                 Posted by <a href="{PostAuthorURL}">{PostAuthorName}</a>
                             </p>
-                            {/block:GroupMembers}
                             {block:PermalinkPage}
                                 {block:HasTags}
                                 <ul class="article-tags">
@@ -608,17 +716,16 @@
                                     </span>
                                 {block:IndexPage}</a>{/block:IndexPage}
                             </h2>
-                            
+                            {block:PostNotes}
                             <p class="article-notes">
                                 {block:NoteCount}
                                 <a href="{Permalink}#notes">{NoteCountWithLabel}</a>
                                 {/block:NoteCount}
                             </p>
-                            {block:GroupMembers}
+                            {/block:PostNotes}
                             <p class="article-author">
                                 Posted by <a href="{PostAuthorURL}">{PostAuthorName}</a>
                             </p>
-                            {/block:GroupMembers}
                             {block:PermalinkPage}
                                 {block:HasTags}
                                 <ul class="article-tags">
@@ -664,17 +771,16 @@
                                     </span>
                                 {block:PermalinkPage}</a>{/block:PermalinkPage}
                             </h2>
-                            
+                            {block:PostNotes}
                             <p class="article-notes">
                                 {block:NoteCount}
                                 <a href="{Permalink}#notes">{NoteCountWithLabel}</a>
                                 {/block:NoteCount}
                             </p>
-                            {block:GroupMembers}
+                            {/block:PostNotes}
                             <p class="article-author">
                                 Posted by <a href="{PostAuthorURL}">{PostAuthorName}</a>
                             </p>
-                            {/block:GroupMembers}
                             {block:PermalinkPage}
                                 {block:HasTags}
                                 <ul class="article-tags">
@@ -743,7 +849,7 @@
 
         <footer id="sitemeta">
             <div class="inner">
-                <p>©&nbsp;♔</p>
+                <p>♔</p>
             </div>
         </footer>
 

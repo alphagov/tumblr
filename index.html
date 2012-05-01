@@ -49,12 +49,12 @@
                 font-size: 15px;
                 font-size: 1.5rem;
                 line-height: 1.6;
-                letter-spacing: -0.125em;
             }
 
             #wrapper {
                 position: relative;
                 overflow: hidden;
+                margin: 0 auto;
                 padding: 24px;
                 padding: 2.4rem;
                 max-width: 500px;
@@ -115,91 +115,74 @@
         <section id="main">
 
             {block:SearchPage}
-                <article>
-                    <div class="inner">
-                        <div class="searchPage">
-                            <h2>Search results for <a href="{URLSafeSearchQuery}">{SearchQuery}</a></h2>
-                        </div>
-                        {block:NoSearchResults}
-                        <div class="searchPageText">
-                            <p>I’m sorry, but we couldn't find anything matching "<b>{SearchQuery}</b>". Suggestions:</p>
-                            <ul>
-                                <li>Make sure all words are spelled correctly.</li>
-                                <li>Try different keywords.</li>
-                                <li>Try more general keywords.</li>
-                            </ul>
-                        </div>
-                        {/block:NoSearchResults}
+            <article>
+                <div class="inner">
+                    <div class="searchPage">
+                        <h2>Search results for <a href="{URLSafeSearchQuery}">{SearchQuery}</a></h2>
                     </div>
-                </article>
+                    {block:NoSearchResults}
+                    <div class="searchPageText">
+                        <p>I’m sorry, but we couldn't find anything matching "<b>{SearchQuery}</b>".Suggestions:</p>
+                        <ul>
+                            <li>Make sure all words are spelled correctly.</li>
+                            <li>Try different keywords.</li>
+                            <li>Try more general keywords.</li>
+                        </ul>
+                    </div>
+                    {/block:NoSearchResults}
+                </div>
+            </article>
             {/block:SearchPage}
       
             {block:TagPage}
-                <article>
-                    <div class="inner">
-                        <div class="searchPage">
-                            <h2>Posts tagged <a href="{TagURL}">{Tag}</a></h2>
-                        </div>
+            <article>
+                <div class="inner">
+                    <div class="searchPage">
+                        <h2>Posts tagged <a href="{TagURL}">{Tag}</a></h2>
                     </div>
-                </article>
+                </div>
+            </article>
             {/block:TagPage}      
 
             {block:Posts}
 
-                <article>
+                {block:Text}
+                <article class="text">
                     <div class="inner">
-
-
-
-
-
-
-
-
-
-
-                    {block:Text}
-                        <article class="text">
-                            <div class="inner">
-
-                                <header>                                    
-                                    <h2>
-                                        {block:PermalinkPage}<a href="{Permalink}">{/block:PermalinkPage}
-                                            <strong>{block:Title}{Title}{/block:Title}</strong>
-                                            <span class="article-date">
-                                                {block:Date}<abbr>{DayOfMOnth}{DayOfMonthSuffix} {ShortMonth} {Year}</abbr>{/block:Date}
-                                            </span>
-                                        {block:PermalinkPage}</a>{/block:PermalinkPage}
-                                    </h2>
-                                    
-                                    <p class="article-notes">
-                                        {block:NoteCount}
-                                        <a href="{Permalink}#notes">{NoteCountWithLabel}</a>
-                                        {/block:NoteCount}
-                                    </p>
-
-                                    <p class="article-author">
-                                        Posted by <a href="{PostAuthorURL}">{PostAuthorName}</a>
-                                    </p>
-
-                                    {block:PermalinkPage}
-                                        {block:HasTags}
-                                        <ul class="article-tags">
-                                            {block:Tags}
-                                            <li><a href="{TagURL}">{Tag}</a></li>
-                                            {/block:Tags}
-                                        </ul>
-                                        {/block:HasTags}
-                                    {/block:PermalinkPage}
-                                </header>
-
-                                <div class="article-content">
-                                    {Body}
-                                </div>
-
-                            </div>
-                        </article>
-                    {/block:Text}
+                        <header>                                    
+                            <h2>
+                                {block:PermalinkPage}<a href="{Permalink}">{/block:PermalinkPage}
+                                    <strong>{block:Title}{Title}{/block:Title}</strong>
+                                    <span class="article-date">
+                                        {block:Date}<abbr>{DayOfMOnth}{DayOfMonthSuffix}{ShortMonth}{Year}</abbr>{/block:Date}
+                                    </span>
+                                {block:PermalinkPage}</a>{/block:PermalinkPage}
+                            </h2>
+                            
+                            <p class="article-notes">
+                                {block:NoteCount}
+                                <a href="{Permalink}#notes">{NoteCountWithLabel}</a>
+                                {/block:NoteCount}
+                            </p>
+                            <p class="article-author">
+                                Posted by <a href="{PostAuthorURL}">{PostAuthorName}</a>
+                            </p>
+                            {block:PermalinkPage}
+                                {block:HasTags}
+                                <ul class="article-tags">
+                                    {block:Tags}
+                                    <li><a href="{TagURL}">{Tag}</a></li>
+                                    {/block:Tags}
+                                </ul>
+                                {/block:HasTags}
+                            {/block:PermalinkPage}
+                        </header>
+                        <div class="article-content">
+                            {Body}
+                        </div>
+                    </div>
+                </article>
+                {/block:Text}
           
 
 
@@ -210,56 +193,51 @@
 
 
 
-                    {block:Photo}
-                        <article class="photo">
-                            <div class="inner">
-
-                                <header>                                    
-                                    <h2>
-                                        {block:PermalinkPage}<a href="{Permalink}">{/block:PermalinkPage}
-                                            <span class="article-date">
-                                                {block:Date}<abbr>{DayOfMOnth}{DayOfMonthSuffix} {ShortMonth} {Year}</abbr>{/block:Date}
-                                            </span>
-                                        {block:PermalinkPage}</a>{/block:PermalinkPage}
-                                    </h2>
-                                    
-                                    <p class="article-notes">
-                                        {block:NoteCount}
-                                        <a href="{Permalink}#notes">{NoteCountWithLabel}</a>
-                                        {/block:NoteCount}
-                                    </p>
-
-                                    <p class="article-author">
-                                        Posted by <a href="{PostAuthorURL}">{PostAuthorName}</a>
-                                    </p>
-
-                                    {block:PermalinkPage}
-                                        {block:HasTags}
-                                        <ul class="article-tags">
-                                            {block:Tags}
-                                            <li><a href="{TagURL}">{Tag}</a></li>
-                                            {/block:Tags}
-                                        </ul>
-                                        {/block:HasTags}
-                                    {/block:PermalinkPage}
-                                </header>
-
-                                <div class="article-content">
-                                    <figure>
-                                        {block:PermalinkPage}<a href="{Permalink}">{/block:PermalinkPage}
-                                        <img src="{PhotoURL-500}" alt="{PhotoAlt}" />
-                                        {block:PermalinkPage}</a>{/block:PermalinkPage}
-                                        {block:Caption}
-                                        <figcaption>
-                                            {Caption}
-                                        </figcaption>
-                                        {/block:Caption}
-                                    </figure>
-                                </div>
-
-                            </div>
-                        </article>
-                    {/block:Photo}
+                {block:Photo}
+                <article class="photo">
+                    <div class="inner">
+                        <header>                                    
+                            <h2>
+                                {block:PermalinkPage}<a href="{Permalink}">{/block:PermalinkPage}
+                                    <span class="article-date">
+                                        {block:Date}<abbr>{DayOfMOnth}{DayOfMonthSuffix}{ShortMonth}{Year}</abbr>{/block:Date}
+                                    </span>
+                                {block:PermalinkPage}</a>{/block:PermalinkPage}
+                            </h2>
+                            
+                            <p class="article-notes">
+                                {block:NoteCount}
+                                <a href="{Permalink}#notes">{NoteCountWithLabel}</a>
+                                {/block:NoteCount}
+                            </p>
+                            <p class="article-author">
+                                Posted by <a href="{PostAuthorURL}">{PostAuthorName}</a>
+                            </p>
+                            {block:PermalinkPage}
+                                {block:HasTags}
+                                <ul class="article-tags">
+                                    {block:Tags}
+                                    <li><a href="{TagURL}">{Tag}</a></li>
+                                    {/block:Tags}
+                                </ul>
+                                {/block:HasTags}
+                            {/block:PermalinkPage}
+                        </header>
+                        <div class="article-content">
+                            <figure>
+                                {block:PermalinkPage}<a href="{Permalink}">{/block:PermalinkPage}
+                                <img src="{PhotoURL-500}" alt="{PhotoAlt}" />
+                                {block:PermalinkPage}</a>{/block:PermalinkPage}
+                                {block:Caption}
+                                <figcaption>
+                                    {Caption}
+                                </figcaption>
+                                {/block:Caption}
+                            </figure>
+                        </div>
+                    </div>
+                </article>
+                {/block:Photo}
             
 
 
@@ -271,53 +249,49 @@
 
 
 
-                    {block:Photoset}
-                        <article class="photoset">
-                            <div class="inner">
-
-                                <header>                                    
-                                    <h2>
-                                        {block:PermalinkPage}<a href="{Permalink}">{/block:PermalinkPage}
-                                            <span class="article-date">
-                                                {block:Date}<abbr>{DayOfMOnth}{DayOfMonthSuffix} {ShortMonth} {Year}</abbr>{/block:Date}
-                                            </span>
-                                        {block:PermalinkPage}</a>{/block:PermalinkPage}
-                                    </h2>
-                                    
-                                    <p class="article-notes">
-                                        {block:NoteCount}
-                                        <a href="{Permalink}#notes">{NoteCountWithLabel}</a>
-                                        {/block:NoteCount}
-                                    </p>
-
-                                    <p class="article-author">
-                                        Posted by <a href="{PostAuthorURL}">{PostAuthorName}</a>
-                                    </p>
-
-                                    {block:PermalinkPage}
-                                        {block:HasTags}
-                                        <ul class="article-tags">
-                                            {block:Tags}
-                                            <li><a href="{TagURL}">{Tag}</a></li>
-                                            {/block:Tags}
-                                        </ul>
-                                        {/block:HasTags}
-                                    {/block:PermalinkPage}
-                                </header>
-
-                                <div class="article-content">
-                                    <figure>
-                                        <div class="media">{Photoset-500}</div>
-                                        {block:Caption}
-                                        <figcaption>
-                                            {Caption}
-                                        </figcaption>
-                                        {/block:Caption}
-                                    </figure>
-                                </div>
-                            </div>
-                        </article>
-                    {/block:Photoset}
+                {block:Photoset}
+                <article class="photoset">
+                    <div class="inner">
+                        <header>                                    
+                            <h2>
+                                {block:PermalinkPage}<a href="{Permalink}">{/block:PermalinkPage}
+                                    <span class="article-date">
+                                        {block:Date}<abbr>{DayOfMOnth}{DayOfMonthSuffix}{ShortMonth}{Year}</abbr>{/block:Date}
+                                    </span>
+                                {block:PermalinkPage}</a>{/block:PermalinkPage}
+                            </h2>
+                            
+                            <p class="article-notes">
+                                {block:NoteCount}
+                                <a href="{Permalink}#notes">{NoteCountWithLabel}</a>
+                                {/block:NoteCount}
+                            </p>
+                            <p class="article-author">
+                                Posted by <a href="{PostAuthorURL}">{PostAuthorName}</a>
+                            </p>
+                            {block:PermalinkPage}
+                                {block:HasTags}
+                                <ul class="article-tags">
+                                    {block:Tags}
+                                    <li><a href="{TagURL}">{Tag}</a></li>
+                                    {/block:Tags}
+                                </ul>
+                                {/block:HasTags}
+                            {/block:PermalinkPage}
+                        </header>
+                        <div class="article-content">
+                            <figure>
+                                <div class="media">{Photoset-500}</div>
+                                {block:Caption}
+                                <figcaption>
+                                    {Caption}
+                                </figcaption>
+                                {/block:Caption}
+                            </figure>
+                        </div>
+                    </div>
+                </article>
+                {/block:Photoset}
             
 
 
@@ -329,54 +303,49 @@
 
 
 
-                    {block:Quote}
-                        <article class="quote">
-                            <div class="inner">
-
-                                <header>                                    
-                                    <h2>
-                                        {block:PermalinkPage}<a href="{Permalink}">{/block:PermalinkPage}
-                                            <span class="article-date">
-                                                {block:Date}<abbr>{DayOfMOnth}{DayOfMonthSuffix} {ShortMonth} {Year}</abbr>{/block:Date}
-                                            </span>
-                                        {block:PermalinkPage}</a>{/block:PermalinkPage}
-                                    </h2>
-                                    
-                                    <p class="article-notes">
-                                        {block:NoteCount}
-                                        <a href="{Permalink}#notes">{NoteCountWithLabel}</a>
-                                        {/block:NoteCount}
-                                    </p>
-
-                                    <p class="article-author">
-                                        Posted by <a href="{PostAuthorURL}">{PostAuthorName}</a>
-                                    </p>
-
-                                    {block:PermalinkPage}
-                                        {block:HasTags}
-                                        <ul class="article-tags">
-                                            {block:Tags}
-                                            <li><a href="{TagURL}">{Tag}</a></li>
-                                            {/block:Tags}
-                                        </ul>
-                                        {/block:HasTags}
-                                    {/block:PermalinkPage}
-                                </header>
-
-                                <div class="article-content">
-                                    <figure>
-                                        <blockquote>{Quote}</blockquote>
-                                        {block:Caption}
-                                        <figcaption>
-                                            {Caption}
-                                        </figcaption>
-                                        {/block:Caption}
-                                    </figure>
-                                </div>
-
-                            </div>
-                        </article>
-                    {/block:Quote}
+                {block:Quote}
+                <article class="quote">
+                    <div class="inner">
+                        <header>                                    
+                            <h2>
+                                {block:PermalinkPage}<a href="{Permalink}">{/block:PermalinkPage}
+                                    <span class="article-date">
+                                        {block:Date}<abbr>{DayOfMOnth}{DayOfMonthSuffix}{ShortMonth}{Year}</abbr>{/block:Date}
+                                    </span>
+                                {block:PermalinkPage}</a>{/block:PermalinkPage}
+                            </h2>
+                            
+                            <p class="article-notes">
+                                {block:NoteCount}
+                                <a href="{Permalink}#notes">{NoteCountWithLabel}</a>
+                                {/block:NoteCount}
+                            </p>
+                            <p class="article-author">
+                                Posted by <a href="{PostAuthorURL}">{PostAuthorName}</a>
+                            </p>
+                            {block:PermalinkPage}
+                                {block:HasTags}
+                                <ul class="article-tags">
+                                    {block:Tags}
+                                    <li><a href="{TagURL}">{Tag}</a></li>
+                                    {/block:Tags}
+                                </ul>
+                                {/block:HasTags}
+                            {/block:PermalinkPage}
+                        </header>
+                        <div class="article-content">
+                            <figure>
+                                <blockquote>{Quote}</blockquote>
+                                {block:Caption}
+                                <figcaption>
+                                    {Caption}
+                                </figcaption>
+                                {/block:Caption}
+                            </figure>
+                        </div>
+                    </div>
+                </article>
+                {/block:Quote}
             
 
 
@@ -389,54 +358,49 @@
 
 
     
-                    {block:Link}
-                        <article class="link">
-                            <div class="inner">
-
-                                <header>                                    
-                                    <h2>
-                                        {block:PermalinkPage}<a href="{Permalink}">{/block:PermalinkPage}
-                                            <span class="article-date">
-                                                {block:Date}<abbr>{DayOfMOnth}{DayOfMonthSuffix} {ShortMonth} {Year}</abbr>{/block:Date}
-                                            </span>
-                                        {block:PermalinkPage}</a>{/block:PermalinkPage}
-                                    </h2>
-                                    
-                                    <p class="article-notes">
-                                        {block:NoteCount}
-                                        <a href="{Permalink}#notes">{NoteCountWithLabel}</a>
-                                        {/block:NoteCount}
-                                    </p>
-
-                                    <p class="article-author">
-                                        Posted by <a href="{PostAuthorURL}">{PostAuthorName}</a>
-                                    </p>
-
-                                    {block:PermalinkPage}
-                                        {block:HasTags}
-                                        <ul class="article-tags">
-                                            {block:Tags}
-                                            <li><a href="{TagURL}">{Tag}</a></li>
-                                            {/block:Tags}
-                                        </ul>
-                                        {/block:HasTags}
-                                    {/block:PermalinkPage}
-                                </header>
-
-                                <div class="article-content">
-                                    <figure>
-                                        <a href="{URL}" {Target}>{Name}</a>
-                                        {block:Description}
-                                        <figcaption>
-                                            {Description}
-                                        </figcaption>
-                                        {/block:Description}
-                                    </figure>
-                                </div>
-
-                            </div>
-                        </article>
-                    {/block:Link}       
+                {block:Link}
+                <article class="link">
+                    <div class="inner">
+                        <header>                                    
+                            <h2>
+                                {block:PermalinkPage}<a href="{Permalink}">{/block:PermalinkPage}
+                                    <span class="article-date">
+                                        {block:Date}<abbr>{DayOfMOnth}{DayOfMonthSuffix}{ShortMonth}{Year}</abbr>{/block:Date}
+                                    </span>
+                                {block:PermalinkPage}</a>{/block:PermalinkPage}
+                            </h2>
+                            
+                            <p class="article-notes">
+                                {block:NoteCount}
+                                <a href="{Permalink}#notes">{NoteCountWithLabel}</a>
+                                {/block:NoteCount}
+                            </p>
+                            <p class="article-author">
+                                Posted by <a href="{PostAuthorURL}">{PostAuthorName}</a>
+                            </p>
+                            {block:PermalinkPage}
+                                {block:HasTags}
+                                <ul class="article-tags">
+                                    {block:Tags}
+                                    <li><a href="{TagURL}">{Tag}</a></li>
+                                    {/block:Tags}
+                                </ul>
+                                {/block:HasTags}
+                            {/block:PermalinkPage}
+                        </header>
+                        <div class="article-content">
+                            <figure>
+                                <a href="{URL}" {Target}>{Name}</a>
+                                {block:Description}
+                                <figcaption>
+                                    {Description}
+                                </figcaption>
+                                {/block:Description}
+                            </figure>
+                        </div>
+                    </div>
+                </article>
+                {/block:Link}       
              
 
 
@@ -449,51 +413,46 @@
 
 
            
-                    {block:Chat}
-                        <article class="link">
-                            <div class="inner">
-
-                                <header>                                    
-                                    <h2>
-                                        {block:PermalinkPage}<a href="{Permalink}">{/block:PermalinkPage}
-                                            <strong>{block:Title}{Title}{/block:Title}</strong>
-                                            <span class="article-date">
-                                                {block:Date}<abbr>{DayOfMOnth}{DayOfMonthSuffix} {ShortMonth} {Year}</abbr>{/block:Date}
-                                            </span>
-                                        {block:PermalinkPage}</a>{/block:PermalinkPage}
-                                    </h2>
-                                    
-                                    <p class="article-notes">
-                                        {block:NoteCount}
-                                        <a href="{Permalink}#notes">{NoteCountWithLabel}</a>
-                                        {/block:NoteCount}
-                                    </p>
-
-                                    <p class="article-author">
-                                        Posted by <a href="{PostAuthorURL}">{PostAuthorName}</a>
-                                    </p>
-
-                                    {block:PermalinkPage}
-                                        {block:HasTags}
-                                        <ul class="article-tags">
-                                            {block:Tags}
-                                            <li><a href="{TagURL}">{Tag}</a></li>
-                                            {/block:Tags}
-                                        </ul>
-                                        {/block:HasTags}
-                                    {/block:PermalinkPage}
-                                </header>
-
-                                <div class="article-content">
-                                    {block:Lines}
-                                    {block:Label}<h3>{Label}</h3>{/block:Label}
-                                    <p>{Line}</p>
-                                    {/block:Lines}
-                                </div>
-
-                            </div>
-                        </article>
-                    {/block:Chat}       
+                {block:Chat}
+                <article class="link">
+                    <div class="inner">
+                        <header>                                    
+                            <h2>
+                                {block:PermalinkPage}<a href="{Permalink}">{/block:PermalinkPage}
+                                    <strong>{block:Title}{Title}{/block:Title}</strong>
+                                    <span class="article-date">
+                                        {block:Date}<abbr>{DayOfMOnth}{DayOfMonthSuffix}{ShortMonth}{Year}</abbr>{/block:Date}
+                                    </span>
+                                {block:PermalinkPage}</a>{/block:PermalinkPage}
+                            </h2>
+                            
+                            <p class="article-notes">
+                                {block:NoteCount}
+                                <a href="{Permalink}#notes">{NoteCountWithLabel}</a>
+                                {/block:NoteCount}
+                            </p>
+                            <p class="article-author">
+                                Posted by <a href="{PostAuthorURL}">{PostAuthorName}</a>
+                            </p>
+                            {block:PermalinkPage}
+                                {block:HasTags}
+                                <ul class="article-tags">
+                                    {block:Tags}
+                                    <li><a href="{TagURL}">{Tag}</a></li>
+                                    {/block:Tags}
+                                </ul>
+                                {/block:HasTags}
+                            {/block:PermalinkPage}
+                        </header>
+                        <div class="article-content">
+                            {block:Lines}
+                            {block:Label}<h3>{Label}</h3>{/block:Label}
+                            <p>{Line}</p>
+                            {/block:Lines}
+                        </div>
+                    </div>
+                </article>
+                {/block:Chat}       
             
 
 
@@ -506,53 +465,48 @@
 
 
     
-                    {block:Audio}
-                        <article class="audio">
-                            <div class="inner">
-
-                                <header>                                    
-                                    <h2>
-                                        {block:PermalinkPage}<a href="{Permalink}">{/block:PermalinkPage}
-                                            <span class="article-date">
-                                                {block:Date}<abbr>{DayOfMOnth}{DayOfMonthSuffix} {ShortMonth} {Year}</abbr>{/block:Date}
-                                            </span>
-                                        {block:PermalinkPage}</a>{/block:PermalinkPage}
-                                    </h2>
-                                    
-                                    <p class="article-notes">
-                                        {block:NoteCount}
-                                        <a href="{Permalink}#notes">{NoteCountWithLabel}</a>
-                                        {/block:NoteCount}
-                                    </p>
-
-                                    <p class="article-author">
-                                        Posted by <a href="{PostAuthorURL}">{PostAuthorName}</a>
-                                    </p>
-
-                                    {block:PermalinkPage}
-                                        {block:HasTags}
-                                        <ul class="article-tags">
-                                            {block:Tags}
-                                            <li><a href="{TagURL}">{Tag}</a></li>
-                                            {/block:Tags}
-                                        </ul>
-                                        {/block:HasTags}
-                                    {/block:PermalinkPage}
-                                </header>
-
-                                <div class="article-content">
-                                    <figure>
-                                        {AudioPlayerWhite}
-                                        <figcaption>
-                                            {block:Artist}<strong>{Artist}</strong>{/block:Artist}, {block:TrackName}{TrackName}{/block:TrackName}
-                                            {block:Caption}{Caption}{/block:Caption}
-                                        </figcaption>
-                                    </figure>
-                                </div>
-
-                            </div>
-                        </article>
-                    {/block:Audio}
+                {block:Audio}
+                <article class="audio">
+                    <div class="inner">
+                        <header>                                    
+                            <h2>
+                                {block:PermalinkPage}<a href="{Permalink}">{/block:PermalinkPage}
+                                    <span class="article-date">
+                                        {block:Date}<abbr>{DayOfMOnth}{DayOfMonthSuffix}{ShortMonth}{Year}</abbr>{/block:Date}
+                                    </span>
+                                {block:PermalinkPage}</a>{/block:PermalinkPage}
+                            </h2>
+                            
+                            <p class="article-notes">
+                                {block:NoteCount}
+                                <a href="{Permalink}#notes">{NoteCountWithLabel}</a>
+                                {/block:NoteCount}
+                            </p>
+                            <p class="article-author">
+                                Posted by <a href="{PostAuthorURL}">{PostAuthorName}</a>
+                            </p>
+                            {block:PermalinkPage}
+                                {block:HasTags}
+                                <ul class="article-tags">
+                                    {block:Tags}
+                                    <li><a href="{TagURL}">{Tag}</a></li>
+                                    {/block:Tags}
+                                </ul>
+                                {/block:HasTags}
+                            {/block:PermalinkPage}
+                        </header>
+                        <div class="article-content">
+                            <figure>
+                                {AudioPlayerWhite}
+                                <figcaption>
+                                    {block:Artist}<strong>{Artist}</strong{/block:Artist},{block:TrackName}{TrackName}{/block:TrackName}
+                                    {block:Caption}{Caption}{/block:Caption}
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </article>
+                {/block:Audio}
             
 
 
@@ -565,54 +519,49 @@
 
 
     
-                    {block:Video}
-                        <article class="video">
-                            <div class="inner">
-
-                                <header>                                    
-                                    <h2>
-                                        {block:PermalinkPage}<a href="{Permalink}">{/block:PermalinkPage}
-                                            <span class="article-date">
-                                                {block:Date}<abbr>{DayOfMOnth}{DayOfMonthSuffix} {ShortMonth} {Year}</abbr>{/block:Date}
-                                            </span>
-                                        {block:PermalinkPage}</a>{/block:PermalinkPage}
-                                    </h2>
-                                    
-                                    <p class="article-notes">
-                                        {block:NoteCount}
-                                        <a href="{Permalink}#notes">{NoteCountWithLabel}</a>
-                                        {/block:NoteCount}
-                                    </p>
-
-                                    <p class="article-author">
-                                        Posted by <a href="{PostAuthorURL}">{PostAuthorName}</a>
-                                    </p>
-
-                                    {block:PermalinkPage}
-                                        {block:HasTags}
-                                        <ul class="article-tags">
-                                            {block:Tags}
-                                            <li><a href="{TagURL}">{Tag}</a></li>
-                                            {/block:Tags}
-                                        </ul>
-                                        {/block:HasTags}
-                                    {/block:PermalinkPage}
-                                </header>
-
-                                <div class="article-content">
-                                    <figure>
-                                        {Video-500}
-                                        {block:Caption}
-                                        <figcaption>
-                                            {Caption}
-                                        </figcaption>
-                                        {/block:Caption}
-                                    </figure>
-                                </div>
-
-                            </div>
-                        </article>
-                    {/block:Video}
+                {block:Video}
+                <article class="video">
+                    <div class="inner">
+                        <header>                                    
+                            <h2>
+                                {block:PermalinkPage}<a href="{Permalink}">{/block:PermalinkPage}
+                                    <span class="article-date">
+                                        {block:Date}<abbr>{DayOfMOnth}{DayOfMonthSuffix}{ShortMonth}{Year}</abbr>{/block:Date}
+                                    </span>
+                                {block:PermalinkPage}</a>{/block:PermalinkPage}
+                            </h2>
+                            
+                            <p class="article-notes">
+                                {block:NoteCount}
+                                <a href="{Permalink}#notes">{NoteCountWithLabel}</a>
+                                {/block:NoteCount}
+                            </p>
+                            <p class="article-author">
+                                Posted by <a href="{PostAuthorURL}">{PostAuthorName}</a>
+                            </p>
+                            {block:PermalinkPage}
+                                {block:HasTags}
+                                <ul class="article-tags">
+                                    {block:Tags}
+                                    <li><a href="{TagURL}">{Tag}</a></li>
+                                    {/block:Tags}
+                                </ul>
+                                {/block:HasTags}
+                            {/block:PermalinkPage}
+                        </header>
+                        <div class="article-content">
+                            <figure>
+                                {Video-500}
+                                {block:Caption}
+                                <figcaption>
+                                    {Caption}
+                                </figcaption>
+                                {/block:Caption}
+                            </figure>
+                        </div>
+                    </div>
+                </article>
+                {/block:Video}
             
 
 
@@ -624,54 +573,49 @@
 
 
 
-                    {block:Answer}
-                        <article class="answer">
-                            <div class="inner">
-
-                                <header>                                    
-                                    <h2>
-                                        {block:PermalinkPage}<a href="{Permalink}">{/block:PermalinkPage}
-                                            <span class="article-date">
-                                                {block:Date}<abbr>{DayOfMOnth}{DayOfMonthSuffix} {ShortMonth} {Year}</abbr>{/block:Date}
-                                            </span>
-                                        {block:PermalinkPage}</a>{/block:PermalinkPage}
-                                    </h2>
-                                    
-                                    <p class="article-notes">
-                                        {block:NoteCount}
-                                        <a href="{Permalink}#notes">{NoteCountWithLabel}</a>
-                                        {/block:NoteCount}
-                                    </p>
-
-                                    <p class="article-author">
-                                        Posted by <a href="{PostAuthorURL}">{PostAuthorName}</a>
-                                    </p>
-
-                                    {block:PermalinkPage}
-                                        {block:HasTags}
-                                        <ul class="article-tags">
-                                            {block:Tags}
-                                            <li><a href="{TagURL}">{Tag}</a></li>
-                                            {/block:Tags}
-                                        </ul>
-                                        {/block:HasTags}
-                                    {/block:PermalinkPage}
-                                </header>
-
-                                <div class="article-content">
-                                    <h3>{Asker} asked: {Question}</h3>
-                                    {Answer}
-                                </div>
-          
-                                {block:PostNotes}
-                                    <div class="article-notes">
-                                        {PostNotes}
-                                    </div>
-                                {/block:PostNotes}
-
+                {block:Answer}
+                <article class="answer">
+                    <div class="inner">
+                        <header>                                    
+                            <h2>
+                                {block:PermalinkPage}<a href="{Permalink}">{/block:PermalinkPage}
+                                    <span class="article-date">
+                                        {block:Date}<abbr>{DayOfMOnth}{DayOfMonthSuffix}{ShortMonth}{Year}</abbr>{/block:Date}
+                                    </span>
+                                {block:PermalinkPage}</a>{/block:PermalinkPage}
+                            </h2>
+                            
+                            <p class="article-notes">
+                                {block:NoteCount}
+                                <a href="{Permalink}#notes">{NoteCountWithLabel}</a>
+                                {/block:NoteCount}
+                            </p>
+                            <p class="article-author">
+                                Posted by <a href="{PostAuthorURL}">{PostAuthorName}</a>
+                            </p>
+                            {block:PermalinkPage}
+                                {block:HasTags}
+                                <ul class="article-tags">
+                                    {block:Tags}
+                                    <li><a href="{TagURL}">{Tag}</a></li>
+                                    {/block:Tags}
+                                </ul>
+                                {/block:HasTags}
+                            {/block:PermalinkPage}
+                        </header>
+                        <div class="article-content">
+                            <h3>{Asker} asked: {Question}</h3>
+                            {Answer}
+                        </div>
+    
+                        {block:PostNotes}
+                            <div class="article-notes">
+                                {PostNotes}
                             </div>
-                        </article>
-                    {/block:Answer}
+                        {/block:PostNotes}
+                    </div>
+                </article>
+                {/block:Answer}
 
                     
             {/block:Posts}

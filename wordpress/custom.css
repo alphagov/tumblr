@@ -1,3 +1,5 @@
+/* @override http://s2.wp.com/?custom-css=1&csblog=1DrgQ&cscache=6&csrev=144 */
+
 @charset "UTF-8";
 
 html {
@@ -609,6 +611,9 @@ body.page #content.no-sidebar .slideshow-window .slideshow-slide img {
   display: none!important;
 }
 
+#content .gds-intro {
+  display: none;
+}
 
 /* SIDEBAR */
 
@@ -900,13 +905,14 @@ body #footer .footer-column ul * {
 #content .post .entry p,
 #content .post .single p:first-child,
 #content .post .single img:first-child + p,
+#content .post .single .gds-intro + p,
 #content .post .single blockquote p strong,
 #content .post-footer .cats a,
 #content #comments .c-body .c-head,
 #content .page p {
   font-family: "Gill Sans W01 Book", "Gill Sans MT Pro", "Gill Sans", GillSans, sans-serif;
-  font-size: 22px;
-  line-height: 1.3928571429;
+  font-size: 24px;
+  line-height: 1.333333333;
 }
 
 /* medium Gill whitespace */
@@ -946,6 +952,46 @@ body #footer .footer-column ul * {
 #content .page .people p {
   padding: 10px 0 3px;
   padding: 1rem 0 0.3rem;
+}
+
+/* SOCIAL MEDIA ICONS */
+#sidebar .subscribe ul li {
+  display: inline-block;
+}
+
+#sidebar .subscribe ul li a {
+  display: block;
+  width: 20px; height: 20px;
+  background-repeat: no-repeat;
+}
+
+#sidebar .subscribe ul li:first-child a {
+  /* Twitter */
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAB20lEQVR42s2U3SsEYRTG93+RbxE7VvlIueHCjY8ruVOuxKUUkrjxD7hzI1eUxfqMEK0ou0hJSYTa2dnZj9m1u/ZjHmfOEoadRhSnTlPv2/ub55zzvK+lctmL38y/B1Y4OH8OtFGWLor8rV+XYDMLLKFDxQsihI8wXmvbkXEoJTB9/YjyJS/KHQZAK21Wr0oYOVHQsedHvl1EyQu4jA7XrUm4i6SghUtOoMsZQCHtZwUKGXX09yjCSRXL9zF0ElhTljPvwdTVI96HqgL9x0EU6aAWfbntu34GvsbsTRRNmz54Y2nogteqVjLnbCt6IJemAWVcKSmouoOk6MuYu41hyB1Cw4ZEPRVh0U2SeufB6KmC78QMtal29TOQs5RUdh8E4PYnTMEmLyNo3ZFZjPBaspUN+6Yyl4bQue9HPKUawq7DKVLFlnobCtmF6veheUvm5ubZPQQUUUHy1x7ihsC+o+An61gETSpBB1whanAUwychjFEPdz1xRJLZFU6ch1Foz+JDTWUZqRs/U9gyRnERTKLnRZnV6KaQSr4dNTStQbcCp/cJyXQGHnhKw3EXQy+BqMcME0zeZR5OQaYU6qsPLdsyGsnY5FEu0Wr++dKD2UL8whCMyvvfD6z5fAarxNjsJOokFAAAAABJRU5ErkJggg==);
+}
+
+#sidebar .subscribe ul li:last-child a {
+  /* RSS Feed */
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUBAMAAAB/pwA+AAAAJFBMVEX1ozH////4umX+9Ob60Zj73bL716X2qT74wHL84r/97tn5y4vsDg1IAAAAaklEQVR4XoXLMQ5AMBTG8ddGQmLppyHphjgATsAN2Iy9Qyebq/QMLqjxMFj6Tb/kvT/FJ6C3j8D4uO087BtkQ/kFOyxnpqa1YKIipzk7YSWO22k4+4UrZ2juAxJMOahRd6bkj/xAIBEY2wXBgwr3pX1CdwAAAABJRU5ErkJggg==);
+}
+
+#sidebar .subscribe ul li a img { display: none; }
+
+/* SOCIAL RATINGS & LIKES */
+#content .entry .sharedaddy img {
+  max-width: 100%;
+}
+
+#content .entry .sharedaddy h3 {
+  margin: 0;
+}
+
+#wrapper div.sharedaddy .wpl-button {
+  margin: 0 5px 0 0;
+}
+
+#wrapper div.sharedaddy .wpl-button a.sd-button span {
+  padding: 3px 5px 3px 20px;
 }
 
 

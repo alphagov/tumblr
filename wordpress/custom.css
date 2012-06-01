@@ -399,7 +399,7 @@ body.custom-background {
   border: none;
 }
 
-#content .post .entry blockquote {
+#content .entry blockquote {
   clear: none;
 }
 
@@ -408,8 +408,8 @@ body.custom-background {
   margin-bottom: 12px;
 }
 
-#content .post .entry h2,
-#content .post .entry h3 {
+#content .entry h2,
+#content .entry h3 {
   margin-top: 24px;
 }
 
@@ -876,7 +876,7 @@ body #footer .footer-column ul * {
 }
 
 /* large Gill */
-#content .post .entry .title,
+#content .entry .title,
 #content .single-post-title,
 #content .pagetitle,
 #content .page h2 {
@@ -888,7 +888,7 @@ body #footer .footer-column ul * {
 }
 
 /* large Gill whitespace */
-#content .post .entry .title,
+#content .entry .title,
 #content .single-post-title,
 #content .pagetitle,
 #content .page h2,
@@ -899,13 +899,13 @@ body #footer .footer-column ul * {
 
 /* medium Gill */
 #featured #slides .slide-content *,
-#content .post .entry h2,
-#content .post .entry h3,
-#content .post .entry p,
-#content .post .single p:first-child,
-#content .post .single img:first-child + p,
-#content .post .single .gds-intro + p,
-#content .post .single blockquote p strong,
+#content .entry h2,
+#content .entry h3,
+#content .entry p,
+#content .single p:first-child,
+#content .single img:first-child + p,
+#content .single .gds-intro + p,
+#content .single blockquote p strong,
 #content .post-footer .cats a,
 #content #comments .c-body .c-head,
 #content .page p {
@@ -915,14 +915,13 @@ body #footer .footer-column ul * {
 }
 
 /* medium Gill whitespace */
-#content .post .entry h2,
-#content .post .entry h3,
-#content .post .entry p,
-#content .post .single p:first-child,
-#content .post .single img:first-child + p,
+#content .entry h2,
+#content .entry h3,
+#content .entry p,
+#content .single p:first-child,
+#content .single img:first-child + p,
 #content .post-footer .cats a,
-#content #comments .c-body .c-head,
-#content .page p {
+#content #comments .c-body .c-head {
   padding: 2px 0 11px;
   padding: 0.2rem 0 1.1rem;
 }
@@ -954,7 +953,9 @@ body #footer .footer-column ul * {
 
 #content .post .single p,
 #content .post .single ul,
-#content #comments div.c-body p
+#content #comments div.c-body p,
+#content .page p,
+#content .page ul
  {
   font-family: sans-serif;
   font-size: 16px;

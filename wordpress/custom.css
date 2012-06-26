@@ -413,7 +413,7 @@ body.custom-background {
   margin-top: 24px;
 }
 
-#content .entry img {
+#content .entry>img {
   float: right;
   max-width: 50%;
   padding: 7px 0 4px 26px;
@@ -421,7 +421,7 @@ body.custom-background {
   border: none;
 }
 
-#content .entry img.size-full {
+#content .entry>img.size-full {
   width: 100%;
   max-width: 100%;
   padding-left: 0;
